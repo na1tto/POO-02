@@ -14,23 +14,32 @@ public class Paciente extends Usuario{
     private List<Retorno> retornos;
     private List<Agendamento> agendamentos;
 
-    public Paciente() {}
+    public Paciente() {
 
-    public Paciente(String CPF, String endereco, String telefone, String convenio) {}
-
-    public List visualizarHistorico(){
-        return null;
     }
 
-    @Override
-    public boolean cadastrar() {
-        return false;
+    public Paciente(String CPF, String endereco, String telefone, String convenio) {
+        this.CPF = CPF;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.convenio = convenio;
     }
 
-    @Override
-    public boolean logar(){
-        return false;
+    // Retornando o histórico de consultas, retornos e agendamentos de um paciente
+    public String visualizarHistorico(){
+
+        return consultas.toString() +"\n"+ retornos.toString() + "\n" + agendamentos.toString();
     }
+
+//    @Override
+//    public boolean cadastrar() {
+//        return false;
+//    }
+
+//    @Override
+//    public boolean logar(){
+//        return false;
+//    }
 
     public long getIdPaciente() {
         return idPaciente;
