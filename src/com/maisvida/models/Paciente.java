@@ -1,5 +1,6 @@
 package com.maisvida.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,12 +26,22 @@ public class Paciente extends Usuario{
         this.endereco = endereco;
         this.telefone = telefone;
         this.convenio = convenio;
+
+        // Inicializando listas vazias para manipular depois
+        this.consultas = new ArrayList<>();
+        this.retornos = new ArrayList<>();
+        this.agendamentos = new ArrayList<>();
+
     }
 
     // Retornando o histórico de consultas, retornos e agendamentos de um paciente
     public String visualizarHistorico(){
 
         return consultas.toString() +"\n"+ retornos.toString() + "\n" + agendamentos.toString();
+    }
+
+    public void adicionarAgendamento(Agendamento agd){
+        this.agendamentos.add(agd);
     }
 
 //    @Override

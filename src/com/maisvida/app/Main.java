@@ -1,6 +1,6 @@
 package com.maisvida.app;
 import com.maisvida.models.*;
-
+import java.util.List;
 
 
 public class Main {
@@ -24,7 +24,7 @@ public class Main {
         System.out.println(agd1.toString());
 
         // Adicionando um agendamento ao meu paciente 1
-        paciente1.getAgendamentos().add(agd1);
+        paciente1.adicionarAgendamento(agd1);
 
         // Inicializando uma consulta realizada
         System.out.println("Consulta realizada! Imprimindo informações de consulta...\n");
