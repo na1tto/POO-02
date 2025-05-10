@@ -1,5 +1,6 @@
 package com.maisvida.models;
 
+import java.util.Date;
 import java.util.List;
 
 public class Paciente extends Usuario{
@@ -18,7 +19,8 @@ public class Paciente extends Usuario{
 
     }
 
-    public Paciente(String CPF, String endereco, String telefone, String convenio) {
+    public Paciente(String nome, String CPF, String endereco, String telefone, String convenio) {
+        super.setNome(nome);
         this.CPF = CPF;
         this.endereco = endereco;
         this.telefone = telefone;

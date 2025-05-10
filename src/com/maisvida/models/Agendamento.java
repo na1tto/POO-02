@@ -2,14 +2,37 @@ package com.maisvida.models;
 
 public class Agendamento {
 
-    public String nomeAgendamento;
+    private Paciente paciente;
+    private Medico medico;
 
-    public Agendamento(String nomeAgendamento) {
-        this.nomeAgendamento = nomeAgendamento;
+    public Agendamento(Paciente paciente, Medico medico) {
+        this.paciente = paciente;
+        this.medico = medico;
     }
 
     @Override
     public String toString() {
-        return "Consulta{" + "nomeConsulta=" + nomeAgendamento + '}';
+
+        String infos = "Nome do Paciente: " + paciente.getNome() + "\n"
+                + "Médico Responsável: " + medico.nome()
+                + "\nEspecialidade: " + medico.especialidade()
+                + "\nCRM: " + medico.CRM();
+        return infos;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 }
