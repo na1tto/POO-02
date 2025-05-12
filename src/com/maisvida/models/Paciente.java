@@ -1,7 +1,7 @@
 package com.maisvida.models;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 public class Paciente extends Usuario{
@@ -42,6 +42,10 @@ public class Paciente extends Usuario{
 
     public void adicionarAgendamento(Agendamento agd){
         this.agendamentos.add(agd);
+    }
+
+    public void adicionarConsulta(Consulta consulta){
+        this.consultas.add(consulta);
     }
 
 //    @Override
@@ -116,5 +120,9 @@ public class Paciente extends Usuario{
 
     public void setAgendamentos(List<Agendamento> agendamentos) {
         this.agendamentos = agendamentos;
+    }
+
+    public String getNome() {
+        return null;
     }
 }

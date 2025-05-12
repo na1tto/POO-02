@@ -1,5 +1,4 @@
 package com.maisvida.models;
-
 import java.util.Date;
 
 public class Funcionario extends Usuario{

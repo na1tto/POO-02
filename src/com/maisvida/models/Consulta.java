@@ -1,6 +1,5 @@
 package com.maisvida.models;
 
-
 import com.maisvida.utils.Feedback;
 
 public class Consulta implements Feedback{
