@@ -13,8 +13,8 @@ public class Agendamento {
     @Override
     public String toString() {
 
-        String infos = "Nome do Paciente: " + paciente.getNome() + "\n"
-                + "Médico Responsável: " + medico.nome()
+        String infos = "\nNome do Paciente: " + paciente.getNome() + "\n"
+                + "\nMédico Responsável: " + medico.nome()
                 + "\nEspecialidade: " + medico.especialidade()
                 + "\nCRM: " + medico.CRM();
         return infos;

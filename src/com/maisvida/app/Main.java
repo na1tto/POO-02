@@ -8,7 +8,7 @@ public class Main {
         // inciando o esqueleto do funcionamento da principal regra de negócio da empresa, cliente realizar agendamentos
         // e fazer consultas, recepcionistas visualizarem agendamentos.
 
-        System.out.printf("Bem vindo à +Vida!\n");
+        System.out.printf("-------------Bem vindo à +Vida!-------------\n");
         // Inicializando um Médico
         Medico m1 = new Medico("Pedro", "Oftamologista", "14526");
         Medico m2 = new Medico("Carlos", "Cardiologista", "98765");
@@ -38,7 +38,6 @@ public class Main {
                                   "a sua idade.\n");
 
         //obs: quando uma consulta acontece após um agendamento, o mesmo deixa de existir e se torna apenas uma consulta.
-
         paciente1.adicionarConsulta(c1);
         paciente1.adicionarConsulta(c2);
 
@@ -47,6 +46,15 @@ public class Main {
         System.out.println(c1.getInfosAgd().toString() + "\n" + c1.getLaudoMedico());
         System.out.println(c2.getInfosAgd().toString() + "\n" + c2.getLaudoMedico());
 
+        // testando o acesso de historico
+        //System.out.println("\n-------------Visualizando o Historico de" + paciente1.getNome());
+        //System.out.println(paciente1.visualizarHistorico().replace("[", "").replace("]", "").replace(",", ""));
+
+        System.out.println("Realizando um retorno...");
+        Retorno r1 = new Retorno(c2, "Entrega de exames");
+        System.out.println(r1.toString());
+
+        paciente1.adicionarRetorno(r1);
         // Temos um problema, como registraremos uma lista de retornos, consultas, e agendamentos cancelados por
         // um paciente? Como uma lista pode conter listas em java? simples, basta criar uma função de retornar historico
         // que retorna o .toString das devidas listas, apesar de não servir como histórico de fato (objetos nao

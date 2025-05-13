@@ -11,6 +11,13 @@ public class Consulta implements Feedback{
         this.laudoMedico = laudoMedico;
     }
 
+    @Override
+    public String toString() {
+        String infos = this.infosAgd.toString() + "\nLaudo: " + this.laudoMedico + "\n";
+
+        return infos;
+    }
+
     public Agendamento getInfosAgd() {
         return infosAgd;
     }

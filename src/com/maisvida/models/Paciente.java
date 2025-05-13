@@ -7,14 +7,13 @@ import java.util.List;
 public class Paciente extends Usuario{
 
     private long idPaciente;
-
     private String CPF;
     private String endereco;
     private String telefone;
     private String convenio;
-    private List<Consulta> consultas;
-    private List<Retorno> retornos;
-    private List<Agendamento> agendamentos;
+    private List<Consulta> consultas; // Contem consultas
+    private List<Retorno> retornos; // Contem retornos
+    private List<Agendamento> agendamentos; // Contem agendamentos
 
     public Paciente() {
 
@@ -36,8 +35,7 @@ public class Paciente extends Usuario{
 
     // Retornando o histórico de consultas, retornos e agendamentos de um paciente
     public String visualizarHistorico(){
-
-        return consultas.toString() +"\n"+ retornos.toString() + "\n" + agendamentos.toString();
+        return consultas.toString() +"\n" + "\n" + agendamentos.toString();
     }
 
     public void adicionarAgendamento(Agendamento agd){
@@ -48,15 +46,9 @@ public class Paciente extends Usuario{
         this.consultas.add(consulta);
     }
 
-//    @Override
-//    public boolean cadastrar() {
-//        return false;
-//    }
-
-//    @Override
-//    public boolean logar(){
-//        return false;
-//    }
+    public void adicionarRetorno(Retorno retorno){
+        this.retornos.add(retorno);
+    }
 
     public long getIdPaciente() {
         return idPaciente;
@@ -122,7 +114,4 @@ public class Paciente extends Usuario{
         this.agendamentos = agendamentos;
     }
 
-    public String getNome() {
-        return null;
-    }
 }

@@ -8,20 +8,13 @@ public abstract class Usuario {
     private String senha;
     private Date dataNascimento;
 
-    public Usuario() {}
+    public Usuario(){} //NoArgsConstructor
 
-    public boolean cadastrar(){return false;}
-
-    public Usuario(String nome, String email, String senha, Date dataNascimento) {
+    public Usuario(String nome, String email, String senha, Date dataNascimento) { // AllArgsConstructor
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
-    }
-
-    public boolean logar(){
-
-        return false;
     }
 
     public String getNome() {
