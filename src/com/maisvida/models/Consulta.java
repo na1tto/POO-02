@@ -1,10 +1,12 @@
 package com.maisvida.models;
 
-import com.maisvida.utils.Feedback;
-
-public class Consulta implements Feedback{
+public class Consulta {
     private Agendamento infosAgd;
     private String laudoMedico;
+
+    public Consulta(Agendamento infosAgd) {
+        this.infosAgd = infosAgd;
+    }
 
     public Consulta(Agendamento infosAgd, String laudoMedico) {
         this.infosAgd = infosAgd;

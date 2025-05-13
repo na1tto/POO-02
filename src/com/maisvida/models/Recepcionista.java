@@ -1,11 +1,27 @@
 package com.maisvida.models;
 
-public class Recepcionista extends Funcionario{
-    private Paciente paciente;
+import com.maisvida.utils.CentralAgd;
 
-    public Recepcionista(Paciente paciente) {
-        this.paciente = paciente;
+public class Recepcionista extends Funcionario{
+    private String numID;
+
+    public Recepcionista(String nome, String numID) {
+        super.setNome(nome);
+        this.numID = numID;
     }
 
+    public void listarAgendamentos(){
+        System.out.println("\nConsultas Agendadas: ");
+        for (Agendamento ag : CentralAgd.getAgendamentos()) {
+            System.out.println(ag);
+        }
+    }
 
+    public String getNumID() {
+        return numID;
+    }
+
+    public void setNumID(String numID) {
+        this.numID = numID;
+    }
 }

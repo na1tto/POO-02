@@ -8,8 +8,8 @@ public class Funcionario extends Usuario{
     public Funcionario(){
     }
 
-    public Funcionario(String nome, String email, String senha, Date dataNascimento, long idFuncionario) {
-        super(nome, email, senha, dataNascimento);
+    public Funcionario(String nome, String email, Date dataNascimento, long idFuncionario) {
+        super(nome, email, dataNascimento);
         this.idFuncionario = idFuncionario;
     }
 

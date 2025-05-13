@@ -16,7 +16,7 @@ public class Retorno {
                 + "\nMédico Responsável: " + this.consulta.getInfosAgd().getMedico().nome()
                 + "\nEspecialidade: " + this.consulta.getInfosAgd().getMedico().especialidade()
                 + "\nCRM: " + this.consulta.getInfosAgd().getMedico().CRM()
-                + "\nMotivo do retorno: " + this.motivoRetorno;
+                + "\nMotivo do retorno: " + this.motivoRetorno + "\n";
         return infos;
     }
 

@@ -1,8 +1,11 @@
 package com.maisvida.models;
 
+import com.maisvida.utils.CentralAgd;
+
 import java.util.ArrayList;
 
 import java.util.List;
+
 
 public class Paciente extends Usuario{
 
@@ -15,10 +18,6 @@ public class Paciente extends Usuario{
     private List<Retorno> retornos; // Contem retornos
     private List<Agendamento> agendamentos; // Contem agendamentos
 
-    public Paciente() {
-
-    }
-
     public Paciente(String nome, String CPF, String endereco, String telefone, String convenio) {
         super.setNome(nome);
         this.CPF = CPF;
@@ -30,12 +29,22 @@ public class Paciente extends Usuario{
         this.consultas = new ArrayList<>();
         this.retornos = new ArrayList<>();
         this.agendamentos = new ArrayList<>();
+    }
 
+    public Agendamento agendarConsulta(Medico medico) {
+        Agendamento agendamento = new Agendamento(this, medico);
+        // Adicionando agendamentos ao meu paciente 1
+        this.adicionarAgendamento(agendamento);
+        // Adicionando agendamentos à minha Central de Agendamentos
+        CentralAgd.addAgendamento(agendamento);
+        return agendamento;
     }
 
     // Retornando o histórico de consultas, retornos e agendamentos de um paciente
     public String visualizarHistorico(){
-        return consultas.toString() +"\n" + "\n" + agendamentos.toString();
+        System.out.println("-------------------Historico do Paciente " + this.getNome() + "-------------------");
+        return ("\t#Agendamentos: \n" + agendamentos.toString() +  "\n \n \tConsultas: \n" + consultas.toString() + "\n" +
+                "\tRetornos: \n" + retornos.toString()).replace("[", "").replace("]", "").replace(",", "");
     }
 
     public void adicionarAgendamento(Agendamento agd){
