@@ -20,9 +20,11 @@ public class MainScanner {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.printf("-------------Bem vindo à +Vida!-------------\n");
-        System.out.printf("-------Vamos iniciar seu cadastro!-------\n");
+        System.out.print("-------------Bem vindo à +Vida!-------------\n");
+        System.out.print("-------Vamos iniciar seu cadastro!-------\n");
 
+
+        //Loop para entrada de dados caso os dados do paciente não estejam corretos
         while (true) {
 
             System.out.print("Digite o seu nome: \n");
@@ -47,36 +49,39 @@ public class MainScanner {
             String resposta = scanner.nextLine();
 
             if ("S".equalsIgnoreCase(resposta)) {
-
                 break;
             } else {
                 System.out.println("\nRefaça seu cadastro!");
             }
-        }
-        Paciente paciente = new Paciente(nomePaciente, cpfPaciente, enderecoPaciente, telefonePaciente, convenioPaciente);
+        } //Fim do loop para entrada de dados de cadastro
 
+        //Criação do objeto paciente com os dados do paciente cadastrado
+        Paciente paciente = new Paciente(nomePaciente, cpfPaciente, enderecoPaciente, telefonePaciente, convenioPaciente);
         System.out.print("\nVocê foi cadastrado com sucesso!");
 
         //Loop para realização de agendamentos e retornos
         while (opcao.equals("S")) {
 
-            System.out.printf("Agora escolha com qual especialista quer se consultar:");
-            Medico medicoPedro = new Medico("Pedro", "Oftamologista", "14526");
+            //Inicialização dos objetos médicos e escolha do especialista
+            System.out.println("Agora escolha com qual especialista quer se consultar:");
+            Medico medicoPedro = new Medico("Pedro", "Oftalmologista", "14526");
             Medico medicoCarlos = new Medico("Carlos", "Cardiologista", "98765");
             Medico medicoFernanda = new Medico("Fernanda", "Clinico Geral", "96486");
 
-            System.out.print("\n1 - Dr. Pedro (Oftamologista)");
+            System.out.print("\n1 - Dr. Pedro (Oftalmologista)");
             System.out.print("\n2 - Dr. Carlos (Cardiologista)");
             System.out.println("\n3 - Dra. Fernanda (Clinico Geral)");
             int escolhaMedico = scanner.nextInt();
             scanner.nextLine();
 
+
+            //Inicialização do objeto médico escolhido como NULL, que será setado abaixo
             Medico medicoEscolhido = null;
 
             switch (escolhaMedico) {
                 case 1:
                     medicoEscolhido = medicoPedro;
-                    System.out.println("Você escolheu o Dr. Pedro (Oftamologista)");
+                    System.out.println("Você escolheu o Dr. Pedro (Oftalmologista)");
                     break;
                 case 2:
                     medicoEscolhido = medicoCarlos;
@@ -91,7 +96,8 @@ public class MainScanner {
                     return;
             }
 
-            System.out.printf("\n------Iniciando seu agendamento!------\n");
+            //Inicialização dos agendamentos
+            System.out.print("\n------Iniciando seu agendamento!------\n");
 
             System.out.print("\nDigite o dia da consulta (formato: dd/mm/aaaa): ");
             String diaConsulta = scanner.nextLine();
@@ -103,6 +109,7 @@ public class MainScanner {
             System.out.printf("\nConsulta com o Dr. %s (%s) agendado para o dia %s ás %s com sucesso!\n",
                     medicoEscolhido.nome(), medicoEscolhido.especialidade(), diaConsulta, horarioConsulta);
 
+            //Objeto agd recebe a consulta agendada
             agd = paciente.agendarConsulta(medicoEscolhido);
 
             System.out.println("\nConsulta realizada com sucesso!\n");
@@ -110,7 +117,8 @@ public class MainScanner {
             consulta = new Consulta(agd);
             paciente.adicionarConsulta(consulta);
 
-            System.out.printf("Deseja marcar um retorno? (S/N): ");
+            //Agendamento do retorno
+            System.out.println("Deseja marcar um retorno? (S/N): ");
             String opcRetorno = scanner.nextLine();
 
             if ("S".equalsIgnoreCase(opcRetorno)) {
