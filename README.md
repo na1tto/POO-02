@@ -42,16 +42,22 @@ O sistema tem como foco **permitir que os pacientes agendem suas consultas de fo
 ```
 
 src/
-├── Main.java
-├── model/
-│   ├── Paciente.java
-│   ├── Medico.java (record)
-│   ├── Consulta.java
-│   └── Agendamento.java
-├── controller/
-│   └── AgendamentoController.java
-└── view/
-└── InterfaceSimples.java
+└── com/
+└── maisvida/
+├── app/
+│ ├── Main.java
+│ └── MainScanner.java
+├── models/
+│ ├── Agendamento.java
+│ ├── Consulta.java
+│ ├── Funcionario.java
+│ ├── Medico.java (record)
+│ ├── Paciente.java
+│ ├── Recepcionista.java
+│ ├── Retorno.java
+│ └── Usuario.java
+├── utils/
+│ └── CentralAgd.java
 
 ```
 
