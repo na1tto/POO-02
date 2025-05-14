@@ -5,10 +5,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // inciando o esqueleto do funcionamento da principal regra de negócio da empresa, cliente realizar agendamentos
+        // Iniciando o esqueleto do funcionamento da principal regra de negócio da empresa: cliente realizar agendamentos
         // e fazer consultas, recepcionistas visualizarem agendamentos.
+        //Setando dados manualmente
 
-        System.out.printf("-------------Bem vindo à +Vida!-------------\n");
+        System.out.print("-------------Bem vindo à +Vida!-------------\n");
         // Inicializando um Médico
         Medico m1 = new Medico("Pedro", "Oftamologista", "14526");
         Medico m2 = new Medico("Carlos", "Cardiologista", "98765");

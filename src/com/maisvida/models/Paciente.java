@@ -18,6 +18,8 @@ public class Paciente extends Usuario{
     private List<Retorno> retornos; // Contem retornos
     private List<Agendamento> agendamentos; // Contem agendamentos
 
+
+    //Construtor Paciente
     public Paciente(String nome, String CPF, String endereco, String telefone, String convenio) {
         super.setNome(nome);
         this.CPF = CPF;
